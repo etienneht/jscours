@@ -88,3 +88,99 @@ const tasse = {
     price: 1,
     content_volume: 25
 }
+
+const eleve = {
+    name :"Jean-Michel",
+    age: 18,
+    class: "terminal",
+    notes: [13, 18, 19, 2, 16, 15.5],
+
+}
+
+console.log(eleve.name)
+
+let moyenne = (eleve.notes[o] + eleve.notes[1] + eleve.notes[2] + eleve.notes[3] + eleve.notes[4] + eleve.notes[5] + eleve.notes[6]) / 6 
+console.log(moyenne)
+
+//opérateur
+
+// l'affectation
+// On donne la valeur de 7 à la variable aa
+let aa:number = 7
+
+//L'addition
+//La valeur 7 est écrasée par l'addition de 12 + 4 (16)
+aa = 12 + 4;
+
+console.log(aa); //donne 16
+//l'affectation après addition
+//avec cette écriture on écrase pas la valeur mais on ajoute 4 à l'ancienne valeur
+aa += 4;
+console.log(aa) //donne 20
+
+//La soustraction
+bb = 20 - 4; //donne 16
+
+console.log(bb); //donne 16
+//l'affectation après soustration
+aa -= 4;
+console.log(aa) //donne 12
+
+
+//La multiplication
+cc = 5 * 8; //donne 40
+
+console.log(cc); //donne 40
+//l'affectation après multiplication
+cc *= 2;
+console.log(cc) //donne 80
+
+//La divison
+dd = 20 / 4; //donne 5
+
+console.log(dd); //donne 5
+//l'affectation après division
+dd /= 2;
+console.log(cc) //donne 2.5
+
+//les modulo
+let ee = 13 % 5
+console.log(ee) //donne 3 
+
+//les exponentiels
+let ff = 3**2;
+console.log(ff) //9
+
+// Les conditions
+let gg = 4;
+let hh = 4;
+let ii = 9;
+
+
+if (gg == hh) {
+    //si la condition est bien remplie
+}else {
+    // si la condition n'est pas remplie
+}
+//égalité non strict
+if ( 6 == "6") {
+    console.log("ça marche");
+}
+
+//égalité strict
+//l'égalité strict vérifie en plus le type de donnée, ici l'égalité est fausse car 6 est un number et "6" est une chaine de caractère
+if ( 6 === "6") {
+    ////////
+}else{
+    console.log("ça marchera pas")
+}
+
+//on va vérifier si jean-michel est majeur
+if(eleve.age >= 18){
+    //ici on va faire la concaténation ( coller plusieurs chaines de caractères entre elles )
+    //avec le nom de l'élève et un texte descriptif
+    console.log(eleve.name + " est bien majeur.")
+}else {
+    //ici concaténation de litteral de gabarit
+    console.log(`${eleve.name} n'est pas majeur`)
+}
