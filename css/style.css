@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Définit la façon dont la hauteur et la largeur totale */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e8eaf6;
+    background: 
+    radial-gradient(1200px 600px at 100% -10%, rgba(127, 77, 255, 0.28), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, rgba(0, 229, 255, 0.28), transparent 60%),
+   #0f1224;
+    min-height: 100vh;
+    line-height: 1.6;
+    padding: 48px 20px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+    margin-left: 2rem;
+}
+
+ol {
+    margin-left: 2rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+ul li a:hover {
+    color: wheat;
+}
+
