@@ -46,7 +46,7 @@ let t = 16800;
 // Les chaînes de caractères = String
 
 const corneille = "Ingrat, rends-moi mon Cid jusques au dernier mot.";
-const moliere = "Votre sang, monsieur n\'est pas tombé dans de mauvaises mains."
+const moliere = "Votre sang, monsieur n\'est pas tombe dans de mauvaises mains."
 console.log(moliere);
 let blague = `C'est une autruche qui rentre dans un bar...`;
 
@@ -84,7 +84,7 @@ let x = null;
 
 const tasse = {
     color: "Rouge",
-    material: "Céramique",
+    material: "Ceramique",
     price: 1,
     content_volume: 25
 }
@@ -99,14 +99,14 @@ const eleve = {
 
 console.log(eleve.name)
 
-let moyenne = (eleve.notes[o] + eleve.notes[1] + eleve.notes[2] + eleve.notes[3] + eleve.notes[4] + eleve.notes[5] + eleve.notes[6]) / 6 
+let moyenne = (eleve.notes[1] + eleve.notes[2] + eleve.notes[3] + eleve.notes[4] + eleve.notes[5] + eleve.notes[6]) / 6 
 console.log(moyenne)
 
 //opérateur
 
 // l'affectation
 // On donne la valeur de 7 à la variable aa
-let aa:number = 7
+
 
 //L'addition
 //La valeur 7 est écrasée par l'addition de 12 + 4 (16)
@@ -183,4 +183,57 @@ if(eleve.age >= 18){
 }else {
     //ici concaténation de litteral de gabarit
     console.log(`${eleve.name} n'est pas majeur`)
+}
+
+
+//révision
+const ingredients = []; //tableau vide que l'on remplira plus tard
+
+//ici on va fabriquer un pln qui permettra de construire plus simplement des ingrédients, on appelle ça en JS le prototypage
+class Ingredient {
+    constructor(nom, unite, quantite) {
+        this.nom = nom;
+        this.unite = unite;
+        this.quantite = quantite;
+    }
+}
+
+class Recette {
+    constructor(nom_recette, nbr_personnes, etapes, liste_ingredients){
+        this.nom_recette = nom_recette;
+        this.nbr_personnes = nbr_personnes;
+        this.etapes = etapes;
+        this.liste_ingredients = liste_ingredients;
+    }
+}
+
+const sucreDeCanne = new Ingredient("sucre de canne", "g", 75);
+const lait = new Ingredient("lait", "cl", 25);
+const oeuf = new Ingredient("oeuf(s)", 3);
+const pain = new Ingredient("pain", "tranche(s) de pain", 6);
+console.log(sucreDeCanne)
+
+//je vais donc mettre mes ingrédients dans le tableau ingredients
+ingredients.push(sucreDeCanne, lait, oeuf, pain);
+console.log(ingredients)
+
+//on va faire notre recette
+const etapes = ["Fouetter les oeufs avec le sucre et le lait", "Y tremper les tranches de pain", "Deux solutions pour la cuisson : les cuire à la poêle dans du beurre en les faisant dorer de chaque côté, ou, les cuire au four : beurrer légèrement un plat à gratin, y répartir les tranches, verser le reste du mélange (ajouter du sucre si envie), laisser cuire à 180°C (thermostat 6) jusqu'à que les tranches soient dorées."]
+const painPerdu = new Recette("Pain perdu", 4, etapes, ingredients );
+console.log(painPerdu)
+
+//Les Boucles
+console.log("coucou !")
+console.log("coucou !")
+console.log("coucou !")
+console.log("coucou !")
+console.log("coucou !")
+
+//imaginons que j'ai besoin d'écrire dans un console.log
+//0 patate(s) à 2000 patate(s)
+//allons-nous écrire à la main 2001 console.log ??
+//non ! nous allons utiliser une boucle
+//et pour cet exemple nous allons utiliser la boucle for.
+for(let i = 0; i <= 2000; i++){
+    console.log(i + "patate(s)")
 }

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/base.js"></script>
+    <script defer src="bases.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
     <title>Les bases du langage JavaScript</title>
 </head>
 <body>
@@ -16,6 +18,239 @@
         <b>let, const</b> et anciennement <i>var</i> (toujours 
         utilisé  dans du vieux code, par contre ne plus l'utilisé) 
         </p>
+        <h2>Les boucles</h2>
+        <p>Une <b>boucle</b> est une structure qui permet de <b>répéter</b> un bloc de code tant qu'une condition est vraie.</p>
+        <p>C'est une façon automatique de répéter des instructions sans devoir les écrire plusieurs fois</p>
+        <h3>Les types de boucles</h3>
+        <ul>
+            <li>La boucle While</li>
+            <li>La boucle Do...While</li>
+            <li>La boucle For</li>
+            <li>La boucle For...Of</li>
+            <li>La boucle For...in</li>
+        </ul>
+        <h3>La boucle While</h3>
+        <p>On l'utilise quand on ne connait pas à l'avance le nombre de tours</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                //Condition => doit être vrai pour pourvoir continuer la boucle.
+                //(comme le if, cependant ne jamais mettre de "==" ou de "===")
+                while (condition) {
+                    // code à exécuter
+                }
+            </code>
+        </pre>
+        <p>Exemple concret</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                let n = 0;
+                while (n < 6) {
+                    console.log(n + " * 5 est égale à " + n * 5);
+                    n++;
+                }
+            </code>
+        </pre>
+        <h3>La boucle Do...While</h3>
+        <p>C'est comme la boucle while, mais elle s'exécute au moins 
+            une fois avant de tester la condition</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                do {
+                    // 
+                } while (condition);
+            </code>
+        </pre>
+        <p>Exemple concret</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                let password;
+                do {
+                    // 
+                } while (condition);
+            </code>
+        </pre>
+        <h3>La boucle For</h3>
+        <p>La plus classique et la plus utilisée quand on connait 
+            à l'avance le nombre de répétition</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                for (initialisation; condition; incrémentation) {
+
+                }
+            </code>
+        </pre>
+        <p>Exemple concret</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                for (let i = 0; i < 5; i++) {
+                    console.log("Compteur : " + i);
+                }
+            </code>
+        </pre>
+        
+        <p>Une boucle for permet de <b>traverser</b> un tableau 
+            à partir de ses index</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                let voitures = ["Dacia", "Lada", "Audi", "Daihatsu", "Toyota", "Chevrolet"];
+
+                for (let i = 0; i < voitures.length; i++) {
+                    console.log(voitures[i]);
+                }
+            </code>
+        </pre>
+        <h3>For...of</h3>
+        <div id="container">
+            <pre class="line-numbers">
+            <code class="language-javascript">
+                let voitures = ["Dacia", "Lada", "Audi", "Daihatsu", "Toyota", "Chevrolet"];
+
+                for (let i = 0; i < voitures.length; i++) {
+                    console.log(voitures[i]);
+                }
+            </code>
+        </pre>
+        </div>
+        
+
+        <h3>LA BOUCLE FOR...IN</h3>
+        <p>Permet de parcourir <b>les propriétés d'un objet</b></p>
+        <div id="pen-container"></div>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                for (let cle in stylo){
+                //on récupère la valeur lié à la clé (taille -> 1)
+                let value = stylo[cle]
+                //on va créer un li pour chaque clé dans l'objet
+                let li = document.createElement("li")
+                //ici c'est un exemple de litteral de gabarit qui facilite l'écriture des concactenation
+                //un litteral de gabarit a besoin OBLIGATOIREMENT des guillemets du 7 ``, et permet 
+                //l'encapsulation du code(variable) dans une string
+                li.innerHTML = `<span class='bleu'>$(cle)</span` ${value}
+                console.log(value)
+            }
+            </code>
+        </pre>
+
+        <h3>Les mots clés BREAK et CONTINUE</h3>
+        <p>break permet de sortir immédiatement d'une boucle</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                //break
+                for (let i = 0; i < 10; i++){
+                    if (i === 5) {
+                        break;
+                    }
+                    console.log(i)
+                }
+
+            </code>
+        </pre>
+        <p>Le continue permet de sauter une iteration sans arrêter la boucle</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                //continue
+            //imaginons que l'on veut récupérer uniquement les nombres impairs générés par une boucle for
+            for (let i = 0; i < 10; i++){
+                if (i % 2 === 0){
+            continue;
+        }
+        console.log(i)
+        }
+
+            </code>
+        </pre>
+
+        <h2>LES TABLEAUX</h2>
+        <p>Un tableau en JavaScript est un objet spécial qui peut contenir plusieurs valeurs dans une seule variable</p>
+
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                const fruits = ("pomme", "banane", "orange")
+            </code>
+        </pre>
+
+        <p>Comment accéder aux éléments ?</p>
+            <pre class="line-numbers">
+            <code class="language-javascript">
+                const fruits = ["pomme", "banane", "orange"]
+
+                console.log(fruits[0]); "pomme"
+                console.log(fruits[1]); "banane"
+                console.log(fruits[2]); "orange"
+            </code>
+        </pre>
+        <p>Modifier un élément du tableau</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                const fruits = ["pomme", "banane", "orange"]
+
+                fruits[1] = "kiwi";
+            </code>
+        </pre>
+        <p>Ajouter et supprimer des éléments dans un tableau</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                const fruits = ["pomme", "banane", "orange"]
+
+                const fruits2 = ["pomme", "banane", "orange"]
+
+                //ajouter un élément à la fin du tableau
+                fruits2.push("fraise");
+                //ajouter un élément au début
+                fruits2.unshift("melon");
+                //supprimer le dernier élément 
+                fruits2.pop();
+                //supprimer le premier élément 
+                fruits2.shift()
+            </code>
+        </pre>
+        <p>Autres fonctions utiles</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                //autres fonctions utiles
+
+                const fruits3 = ["framboise", "avocat", "coing", "poire"];
+
+                //trouver l'index d'un élément
+                let poseFruit = fruits3.indexOf("tomate")
+                console.log(poseFruit)
+                //verifier si un élément est présent
+                console.log(fruits3.includes("orange"))
+                //convertir un tableau en chaine de caractères
+                let saladeDeFruit = fruits3.join(", ")
+                console.log(saladeDeFruit)
+
+            </code>
+        </pre>
+
+        <h2>LES CHAINES DE CARACTERES</h2>
+        <p>Une chaine de caractères ou string est une suite de caractères (lettre,  chiffre, symbole...) entre guillemets</p>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                let txt = "Bonjour le monde"
+
+                let nom = "Alice";
+                let message = Salut !`
+                let phrase = ${message} ${nom}`// Salut ! Alice
+            </code>
+        </pre>
+
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                //string
+
+                //connaitre la taille d'une string
+                let mot = "jean-Michel"
+                console.log(mot.length);
+                //attends ?? length 
+                console.log(mot[1]);
+                //on vous a menti depuis le debut les string sont des tableaux
+                //pour ajouter par exemple une majuscule au premier élément
+                let mot2 = charAt[0].toUpperCase() + mot.slice(1); // J + ean-Michel
+                console.log(mot2)
+            </code>
+        </pre>
 
     </main>
 </body>

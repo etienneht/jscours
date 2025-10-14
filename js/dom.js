@@ -67,3 +67,5 @@ img.style.height = "auto";
 
 //maintenant que l'on a construit notre image, on peut "l'accrocher" à un autre élément mais en tant qu'enfant
 mom.appendChild(img)
+
+

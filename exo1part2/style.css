@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Calibri, sans serif;
+}
+
+.btn {
+    padding: 1rem;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #8c704f;
+    cursor: pointer;
+    color: white;
+}
+
+.potato {
+    padding: 1rem;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.potato:hover {
+    background-color: #f66262;
+    cursor: pointer;
+    color: white;
+}
+
+#container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-height: 50px
+}
+
+.box {
+    padding: 10px;
+    background-color: lightblue;
+    margin: 5px 0;
+    border-radius: 5px;
+}
