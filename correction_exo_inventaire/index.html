@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Exo JS stock</title>
+</head>
+<body>
+
+    <main>
+        <h1>Gestionnaire d'inventaire de bureau</h1>
+
+        <input type="text" id="name" placeholder="Nom de l'objet">
+        <input type="number" id="quantity" placeholder="Quantité de l'objet">
+        <select id="category">
+            <option value="info">Informatique</option>
+            <option value="furniture">Mobilier</option>
+            <option value="other">Autre</option>
+        </select>
+
+        <button id="add">Ajouter</button>
+        <button id="clean">Vider</button>
+        <button id="sort">Trier par nom</button>
+        <select id="filter">
+            <option value="">--- Filtrer par catégorie ---</option>
+            <option value="info">Informatique</option>
+            <option value="furniture">Mobilier</option>
+            <option value="other">Autre</option>
+        </select>
+
+        <h2 id ='counter'>Total : 0 objet</h2>
+        <div id="inventory"></div>
+
+    </main>
+
+</body>
+</html>

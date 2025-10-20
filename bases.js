@@ -437,7 +437,7 @@ const panier = [
     {nom: "Webcam", stock: 2 },
 ]
 
-//dans un console log afficher uniquement les articles qui ne sont pas en rupture de srock
+//dans un console log afficher uniquement les articles qui ne sont pas en rupture de stock
 for (let i = 0; i < panier.length; i++){
     if (panier [i].stock === 0){
         continue;

@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/dom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
     <title>Le DOM</title>
 </head>
-<body>
+<!-- a éviter si possible merci -->
+<body style="height: 2000vh;">
    
     <main>
 
@@ -34,6 +37,98 @@
                 </ul>
             </div>
         </div>
+
+        <hr>
+
+        <h2>Récupérer une classe en JS</h2>
+        <ul class="list-pokemon">
+            <li class="pokemons">Alakazam</li>
+            <li class="pokemons">Leveinard</li>
+            <li class="pokemons">Dracaufeu</li>
+            <li class="pokemons">Gardevoir</li>
+            <li class="pokemons">Mentali</li>
+        </ul>
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                //récuperer les class
+
+        // méthode déconseillée
+        //const pokemons = document.getElementsByClassName("pokemons")
+        //méthode standard
+        const pokemons = document.querySelectorAll(`.pokemons`)
+        //si on sait qu'il y a qu'un élémént d'une class, on peut utiliser :
+        const listPokemon = document.querySelector(`.list-pokemon`)
+        //queryselector prendra uniquement le premier élément avec ce nom de class
+        console.log(pokemons)
+        console.log(listPokemon)
+        const colorPokemon = ["#ebae34", "#f5b0d7", "#f5bf82", "#d2faac", "#d7c5d9"];
+        for (let i = 0; i < colorPokemon.length; i++) {
+            pokemons[i].style.color = colorPokemon[i]
+        }
+        //ajouter une class
+        // element.classList.add(nom de la class)
+        //enlever une class
+        //element.classList.remove(nom de la class)
+        //basculer de class
+        //element.classList.toggle(nom de la class)
+
+                
+    </pre>
+</code>
+
+        <h2>Set Timeout() et SetInterval()</h2>
+        <h3>SetTimeout()</h3>
+        <p>Ca execute une fonction une seule fois après un certain temps</p>
+
+
+        <pre class="line-numbers">
+            <code class="language-javascript">
+                
+                    setTimeout(function (){
+                    console.log("3 secondes se sont écoulées !")
+
+                }, 3000)
+
+        </pre>
+    </code>
+
+        <h3>SetInterval()</h3>
+        <p>Execute une fonction de manière répétée à interval régulier</p>
+
+        <pre class="line-numbers">
+            <code class="language-javascript">
+               
+                    setInterval(function (){
+                    console.log("une seconde vient de passer !")
+
+                }, 1000)
+
+        </pre>
+    </code>
+
+        <h3>ClearTimeout() et ClearInterval()</h3>
+        <p>Pour pouvoir supprimer vos timers il faudra les mettre dans une variable</p>
+
+        <pre class="line-numbers">
+            <code class="language-javascript">
+               
+                const timer = setTimeout(function (){
+                console.log("3 secondes se sont écoulées !")
+
+            }, 3000)
+
+                clearTimeout(timer) // c'est plus interressant dans un évènement
+
+                const interval = setInterval(function (){
+                console.log("une seconde vient de passer !")
+
+            }, 1000)
+
+                clearInterval(interval)
+
+        </pre>
+    </code>
+
 
     </main>
     

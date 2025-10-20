@@ -136,6 +136,7 @@
         <p>break permet de sortir immédiatement d'une boucle</p>
         <pre class="line-numbers">
             <code class="language-javascript">
+
                 //break
                 for (let i = 0; i < 10; i++){
                     if (i === 5) {
@@ -146,17 +147,19 @@
 
             </code>
         </pre>
+
         <p>Le continue permet de sauter une iteration sans arrêter la boucle</p>
         <pre class="line-numbers">
             <code class="language-javascript">
+                
                 //continue
-            //imaginons que l'on veut récupérer uniquement les nombres impairs générés par une boucle for
-            for (let i = 0; i < 10; i++){
+                //imaginons que l'on veut récupérer uniquement les nombres impairs générés par une boucle for
+                for (let i = 0; i < 10; i++){
                 if (i % 2 === 0){
-            continue;
-        }
-        console.log(i)
-        }
+                continue;
+                }
+                console.log(i)
+                }
 
             </code>
         </pre>
@@ -180,6 +183,7 @@
                 console.log(fruits[2]); "orange"
             </code>
         </pre>
+
         <p>Modifier un élément du tableau</p>
         <pre class="line-numbers">
             <code class="language-javascript">
@@ -188,6 +192,7 @@
                 fruits[1] = "kiwi";
             </code>
         </pre>
+
         <p>Ajouter et supprimer des éléments dans un tableau</p>
         <pre class="line-numbers">
             <code class="language-javascript">
@@ -205,6 +210,7 @@
                 fruits2.shift()
             </code>
         </pre>
+
         <p>Autres fonctions utiles</p>
         <pre class="line-numbers">
             <code class="language-javascript">
@@ -238,7 +244,8 @@
 
         <pre class="line-numbers">
             <code class="language-javascript">
-                //string
+               
+               //string
 
                 //connaitre la taille d'une string
                 let mot = "jean-Michel"
@@ -249,9 +256,11 @@
                 //pour ajouter par exemple une majuscule au premier élément
                 let mot2 = charAt[0].toUpperCase() + mot.slice(1); // J + ean-Michel
                 console.log(mot2)
-            </code>
+
         </pre>
+    </code>
 
     </main>
 </body>
 </html>
+
