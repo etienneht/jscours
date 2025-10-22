@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/btn.css">
     <script defer src="js/btn.js"></script>
-    <title>Document</title>
+    <title>Generateur mot de passe</title>
 </head>
 <body>
 
-    <main>
+        <h1>🔐 Générateur de mot de passe</h1>
 
-        <button id="timerBtn"></button>
+        <label for="length">Nombre de mots :</label>
+        <input type="number" id="length" name="length" min="6" max="20" >
+        <button id="btn">Générer</button>
 
-    </main>
+        <div id="password"></div>
     
 </body>
 </html>

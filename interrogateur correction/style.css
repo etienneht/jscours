@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    margin-top: 2rem;
+}
+
+.container div{
+    flex:1;
+
+}
+
+h1, h2, .center {
+    text-align: center;
+}
+
+button{
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: coral;
+    border-radius: 10px;
+    color: bisque;
+}
+
+button:hover{
+    background-color: #a43f11;
+    cursor: pointer;
+}
+
+#remaining-learner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
